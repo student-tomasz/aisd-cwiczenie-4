@@ -14,9 +14,9 @@ public class SorterTest {
     Sorter.insort(array_for_insort);
     ArrayHelper.print(array_for_insort);
     
-    // System.out.println("after qsort():");
-    // Sorter.insort(array_for_qsort);
-    // ArrayHelper.print(array_for_qsort);
+    System.out.println("after qsort():");
+    Sorter.insort(array_for_qsort);
+    ArrayHelper.print(array_for_qsort);
   }
 
 }
