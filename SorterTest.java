@@ -15,7 +15,7 @@ public class SorterTest {
     ArrayHelper.print(array_for_insort);
     
     System.out.println("after qsort():");
-    Sorter.insort(array_for_qsort);
+    Sorter.qsort(array_for_qsort);
     ArrayHelper.print(array_for_qsort);
   }
 
