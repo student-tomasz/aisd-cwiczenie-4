@@ -2,10 +2,13 @@ import java.util.Arrays;
 
 public class SorterTest {
 
+  private static final int COUNT = 10000;
+
   public static void main(String[] args) {
-   double[] array = ArrayHelper.generate(100000);
-   double[] array_for_qsort = Arrays.copyOf(array, array.length);
-   double[] array_for_insort = Arrays.copyOf(array, array.length);
+
+    double[] array = ArrayHelper.generate(SorterTest.COUNT);
+    double[] array_for_qsort = Arrays.copyOf(array, array.length);
+    double[] array_for_insort = Arrays.copyOf(array, array.length);
 
     long[] estimates = new long[2];
     double[] miliseconds = new double[2];
@@ -25,8 +28,9 @@ public class SorterTest {
       miliseconds[i] = estimates[i] / Math.pow(10, 6);
     }
 
-    System.out.format("qsort:  %10.3f [ms]%n", miliseconds[0]);
-    System.out.format("insort: %10.3f [ms]%n", miliseconds[1]);
+    System.out.format("sorting %d doubles took:%n", SorterTest.COUNT);
+    System.out.format("* qsort:  %10.3f [ms]%n", miliseconds[0]);
+    System.out.format("* insort: %10.3f [ms]%n", miliseconds[1]);
   }
 
 }
