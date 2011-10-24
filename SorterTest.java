@@ -3,22 +3,30 @@ import java.util.Arrays;
 public class SorterTest {
 
   public static void main(String[] args) {
-   double[] array = ArrayHelper.generate(10);
-   double[] array_for_insort = Arrays.copyOf(array, array.length);
+   double[] array = ArrayHelper.generate(100000);
    double[] array_for_qsort = Arrays.copyOf(array, array.length);
-    
-    System.out.println("before sort:");
-    ArrayHelper.print(array);
+   double[] array_for_insort = Arrays.copyOf(array, array.length);
 
-    long qsort_estimate, insort_estimate;
+    long[] estimates = new long[2];
+    double[] miliseconds = new double[2];
     
-    System.out.println("after insort():");
-    insort_estimate = Sorter.insort(array_for_insort);
-    ArrayHelper.print(array_for_insort);
+    // System.out.println("before sort:");
+    // ArrayHelper.print(array);
     
-    System.out.println("after qsort():");
-    Sorter.qsort(array_for_qsort);
-    ArrayHelper.print(array_for_qsort);
+    estimates[0] = Sorter.qsort(array_for_qsort);
+    // System.out.println("after qsort():");
+    // ArrayHelper.print(array_for_qsort);
+    
+    estimates[1] = Sorter.insort(array_for_insort);
+    // System.out.println("after insort():");
+    // ArrayHelper.print(array_for_insort);
+
+    for(int i = 0; i < estimates.length; i++) {
+      miliseconds[i] = estimates[i] / Math.pow(10, 6);
+    }
+
+    System.out.format("qsort:  %10.3f [ms]%n", miliseconds[0]);
+    System.out.format("insort: %10.3f [ms]%n", miliseconds[1]);
   }
 
 }
