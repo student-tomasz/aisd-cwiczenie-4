@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class SorterTest {
 
   public static void main(String[] args) {
-   double[] array = new double[]{10, 6, -1, 6, 7, 8, 5, 9, 3, 1};
+   double[] array = ArrayHelper.generate(10);
    double[] array_for_insort = Arrays.copyOf(array, array.length);
    double[] array_for_qsort = Arrays.copyOf(array, array.length);
     

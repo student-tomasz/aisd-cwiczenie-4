@@ -1,8 +1,17 @@
+import java.lang.reflect.Array;
+import java.util.Random;
+
 public class ArrayHelper {
 
   public static double[] generate(int length) {
-    // TODO
-    return null;
+    double[] array = new double[length];
+    Random generator = new Random();
+
+    for (int i = 0; i < length; i++) {
+      array[i] = (generator.nextDouble() + 0.5) * 123;
+    }
+
+    return array;
   }
 
   public static void print(double[] array) {
