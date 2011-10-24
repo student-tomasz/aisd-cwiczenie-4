@@ -1,6 +1,7 @@
 class Sorter {
 
-  public static void insort(double[] array) {
+  public static long insort(double[] array) {
+    long start = System.nanoTime();
     int i, j;
     for (i = 1; i < array.length; i++) {
       double temp = array[i];
@@ -9,10 +10,13 @@ class Sorter {
       }
       array[j+1] = temp;
     }
+    return System.nanoTime() - start;
   }
 
-  public static void qsort(double[] array) {
+  public static long qsort(double[] array) {
+    long start = System.nanoTime();
     qsort(array, 0, array.length-1);
+    return System.nanoTime() - start;
   }
 
   private static void qsort(double[] array, int left, int right) {

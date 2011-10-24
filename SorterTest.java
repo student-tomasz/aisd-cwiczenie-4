@@ -9,9 +9,11 @@ public class SorterTest {
     
     System.out.println("before sort:");
     ArrayHelper.print(array);
+
+    long qsort_estimate, insort_estimate;
     
     System.out.println("after insort():");
-    Sorter.insort(array_for_insort);
+    insort_estimate = Sorter.insort(array_for_insort);
     ArrayHelper.print(array_for_insort);
     
     System.out.println("after qsort():");
