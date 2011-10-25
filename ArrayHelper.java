@@ -8,7 +8,7 @@ public class ArrayHelper {
     Random generator = new Random();
 
     for (int i = 0; i < length; i++) {
-      array[i] = (generator.nextDouble() + 0.5) * 123;
+      array[i] = generator.nextDouble() * Double.MAX_VALUE;
     }
 
     return array;
